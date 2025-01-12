@@ -1,0 +1,634 @@
+[data-theme='light']{
+
+    --color--Barra-latera: #39464F;
+
+    --color-Texto: #FFFFFF;
+    --color-Texto-Menu: #FFFFFF;
+
+    --color-menu-hover: #004f94;
+    --color-menu-hover-texto: rgb(0, 0, 0);
+
+    --color-boton: rgb(0, 0, 0);
+    --color-boton-Texto: rgb(255, 255, 255);
+    --color-linea: rgb(241, 241, 241);
+
+    --colo-switch-base: #004f94;
+    --color-switch-circulo: rgb(241, 241, 241);
+
+    --color-scroll: rgb(192, 192, 192);
+    --color-scroll-hover: rgb(134, 134, 134);
+
+    --color-modulos: #2962FF;
+
+    --contras: invert(100%);
+    --contras2: invert(100%);
+    --contras3: invert(0%) !important;
+}
+
+[data-theme='dark']{
+
+    --color--Barra-latera: #0a0b5c;
+
+    --color-Texto: #2791df;
+    --color-Texto-Menu: rgb(110, 110, 117);
+
+    --color-menu-hover: rgb(0, 0, 0);
+    --color-menu-hover-texto: #2791df;
+
+    --color-boton: rgb(255, 255, 255);
+    --color-boton-Texto: rgb(0, 0, 0);
+    --color-linea: rgb(71, 70, 78);
+
+    --colo-switch-base: #2791df;
+    --color-switch-circulo: rgb(255, 255, 255);
+
+    --color-scroll: rgb(68, 69, 74);
+    --color-scroll-hover: rgb(148, 148, 148);
+
+    --color-modulos: #0a0b5c;
+
+    --contras: invert(100%);
+    --contras2: invert(0%);
+    --contras3: invert(0%) !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    height: 60rem;
+    width: 100%;
+    background-color: #f0f5fd;
+}
+
+.Barra_lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color--Barra-latera);
+    transition: width 0.5s ease, background-color 0.3s ease;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    z-index: 1
+}
+
+.contenidos {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+.mini_barra_lateral {
+
+    width: 250px;
+
+
+}
+
+.Barra_lateral span {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+.Barra_lateral span.oculto {
+
+
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+/*-------->Nombre y Icono*/
+header .Nombre_Paguina {
+
+    width: 50%;
+    height: 45px;
+    color: var(--color-Texto);
+    display: flex;
+    align-items: center;
+}
+
+header .Nombre_Paguina .Icono {
+
+    min-width: 45px;
+    max-width: 50px;
+    font-size: 24px;
+    filter: var(--contras);
+}
+
+
+
+.Barra_lateral .Nombre_Paguina span {
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.Barra_lateral .boton {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-Texto);
+    cursor: pointer;
+}
+
+.Barra_lateral .boton .mas {
+    min-width: 30px;
+    max-width: 15px;
+    font-size: 5px;
+    filter: var(--contras2);
+}
+
+
+/*------Menu de Navegacion--------*/
+.Barra_lateral .navegation {
+    height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Barra_lateral .navegation::-webkit-scrollbar {
+    width: 5px;
+}
+
+.Barra_lateral .navegation::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+
+.Barra_lateral .navegation::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scroll-hover);
+
+}
+
+.Barra_lateral .navegation li {
+
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.Barra_lateral .navegation a {
+
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-Texto-Menu);
+}
+
+/*iconos de barra de navegacion*/
+.Barra_lateral .navegation a:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+.Barra_lateral .navegation .icon {
+
+    max-width: 15px;
+    font-size: 20px;
+    margin: 0px 25px 0 16px;
+    filter: var(--contras);
+}
+
+.Barra_lateral .navegation img {
+
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+
+}
+
+/*------linea de separacion-------*/
+
+.Barra_lateral .linea {
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-linea);
+}
+
+/*------Modo Oscuro--------*/
+.Barra_lateral .modo-oscuro {
+
+    width: 100%;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Barra_lateral .modo-oscuro .info {
+
+    width: 150px;
+    height: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-Texto-Menu);
+}
+
+.Barra_lateral .modo-oscuro .Icon {
+
+    width: 50px;
+    font-size: 20px;
+
+}
+
+/*icono de switch modo oscuro*/
+.Barra_lateral .modo-oscuro img {
+
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+
+}
+
+/*-------switch-------*/
+
+.Barra_lateral .modo-oscuro .switch {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.Barra_lateral .modo-oscuro .base {
+    width: 35px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    background-color: var(--colo-switch-base);
+    border-radius: 50px;
+}
+
+.Barra_lateral .modo-oscuro .circulo {
+    position: relative;
+    width: 21px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50px;
+    left: -1px;
+    transition: left 0.5s ease;
+}
+
+.Barra_lateral .modo-oscuro .circulo.prendido {
+    left: 15px;
+}
+
+/*------------------Usuario------------------*/
+header .usuario {
+
+    width: 25%;
+    display: flex;
+}
+
+header .usuario img {
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+header .usuario .info-usuario {
+
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-Texto);
+    overflow: hidden;
+
+}
+
+header .usuario .nombre-email {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+header .usuario .nombre {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header .usuario .email {
+    font-size: 12px;
+}
+
+header .usuario .icone {
+    width: 35px;
+    min-width: 15px;
+    margin-top: 8px;
+    height: 35px;
+}
+
+/*---------------------------------------*/
+
+header {
+
+    border: 2px solid var(--color--Barra-latera);
+
+    background-color: var(--color--Barra-latera);
+    justify-content: space-between;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    z-index: 1
+}
+
+
+
+
+/*----------------------------------------*/
+.header {
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+    left: 1%;
+}
+
+/*----------------------Modulos-----------------------------*/
+
+.Modulos {
+    width: 700px;
+    display: flex;
+    margin-left: 25px;
+    justify-content: center;
+    position: fixed;
+    top: 76px;
+    left: 50px;
+}
+
+.Modulos .encabezado{
+    display: flex;
+    position: absolute;
+    left: 25px;
+    margin: 16px 33px 33px 0px;
+    filter: var(--contras3) !important;
+  }
+  .Modulos .encabezado img{
+
+    filter: var(--contras3);
+  }
+
+
+.sub-modulos {
+    background-color: var(--color-modulos);
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Modulos .Modulo {
+    border: 2px solid #011222;
+    width: 290px;
+    height: 100px;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    margin: 10px;
+    background-color: azure;
+
+
+}
+
+.Modulos .Contenido {
+    display: grid;
+
+    text-decoration: none;
+    grid-gap: 10rem;
+    grid-template-columns: 200px 0px;
+    grid-template-rows: 100px;
+    margin-top: 100px;
+
+}
+
+.Modulos .Modulo a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modulos .icon {
+    height: 30px;
+    filter: var(--contras);
+}
+
+
+/*-------------------Registro de libros---------------------*/
+.caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin-left: 350px;
+}
+
+.Contenedor {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 15px 15px;
+    background-color: var(--color--Barra-latera);
+    border-radius: 36px;
+}
+
+
+/* Usuario y contraseña*/
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-field .input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding: 0 0 0 42px;
+    font-size: larger;
+}
+
+::-webkit-input-placeholder {
+    color: var(--color-boton-Texto);
+}
+
+/* boton de Acceder*/
+.submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit :hover {
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    color: #fff;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.izquierda {
+    display: flex;
+}
+
+label a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.Registro {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    color: #fff;
+}
+
+/*----------------Tabla de libros------------------------*/
+.Tabla_Libros {
+
+    display: flex;
+    width: 100%;
+    margin: 80px 90px;
+}
+
+.Tabla_Libros .encabezado {
+    display: flex;
+    margin: 16px 33px 33px 0px;
+    position: absolute;
+    left: 80px;
+}
+
+.Tabla_Libros .encabezado .icon {
+
+    height: 30px;
+}
+
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    color: var(--color-Texto);
+}
+
+.Tabla_Resultados {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 85px 0px 25px 25px;
+}
+
+thead {
+    background-color: var(--color--Barra-latera);
+}
+
+.Tabla {
+
+    padding: 25px;
+
+    border-collapse: collapse;
+}
+
+/*----------------------Selector de autores---------------*/
+.select-css {
+
+    padding: .4em 1.4em .3em 1.8em;
+    width: 400px;
+    max-width: 100%;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
+    border-radius: 30px;
+    background: white;
+    height: 45px;
+    font-size: larger;
+}
+
+/*-----------------modal---------------------------------*/
+.contenedor-modal {
+    z-index: -1;
+    opacity: 0;
+}
+
+.contenedor-modal_mostrar {
+    background-color: black;
+    position: fixed;
+    top: 35 rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-modal .modal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 500px;
+    padding: 50px;
+    background-color: #fff;
+    opacity: 1;
+}
